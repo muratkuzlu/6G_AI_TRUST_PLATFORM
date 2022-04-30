@@ -5,12 +5,9 @@ function Navbar(){
     return(
         <nav>
 
-            <Link to='/app'> App </Link>
-            <Link to='/loaddata'> Load Data </Link>
+            {/* <Link to='/app'> App </Link>
+            <Link to='/loaddata'> Load Data </Link> */}
         </nav>
-
-     
-            
 
     )
 }
