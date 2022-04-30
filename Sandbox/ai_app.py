@@ -66,6 +66,14 @@ if st.button('Run Experiment'):
 
 
 st.stop()
+
+
+
+
+
+
+
+
 agree = st.checkbox('I agree')
 agree2 = st.checkbox('test')
 if agree:
