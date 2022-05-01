@@ -194,6 +194,7 @@ def run_all(params):
     
     print("Run ALL")
 
+    result = {}
     #########################################################################
     ### CONFIGURATION
 
@@ -222,7 +223,7 @@ def run_all(params):
     #run_Models = run_RNN | run_LSTM | run_BiLSTM | run_GRU
     #run_Models = run_BiLSTM_Attention
     #run_Models = run_RNN
-    run_Models = 255
+    run_Models = run_RNN
 
     run_epochs = params['param_nr_epoch'] #100
     run_batch_size = params['param_batch_size'] #32
@@ -517,6 +518,9 @@ def run_all(params):
         bfattack_mae_list.append(mae)
         bfattack_comp_time.append(comptime)
         eps = 0
+
+        result['bfattack_rmse_list'] = bfattack_rmse_list
+
         mk_ts.write_file("RNN", rmse, mse, mae, eps, comptime, cvs_file_name)
         
         
@@ -1322,3 +1326,5 @@ def run_all(params):
     ###############################################
     file_name = 'before_attack.pdf'
     draw_before_attack(trainY[-test_size:], RNN_testPredict, LSTM_testPredict, BiLSTM_testPredict, GRU_testPredict, LSTM__Attention_testPredict, BiLSTM__Attention_testPredict, file_name)
+
+    return result
