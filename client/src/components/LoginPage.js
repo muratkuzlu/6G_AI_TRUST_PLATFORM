@@ -2,6 +2,11 @@ import React from 'react';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 
 const LoginPage = () => {
+    console.log('hello login page');
+
+
+    
+    
     return (
         <>
             <Container>

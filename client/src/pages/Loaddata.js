@@ -1,25 +1,48 @@
-import React from 'react';
+import React from "react";
+import { Button, Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const localHost_1 = 'http://localhost:8504'
+const localHost_1 = "http://localhost:8504";
 // {iframe_src}
 function Loaddata() {
-    return(
-        <div>Load Data
+  let navigate = useNavigate();
+  var reDrectPage = () => {
+    navigate("/");
+    localStorage.setItem("token", "logedOut");
+  };
 
-        <iframe
-            title="labeler"
-            src="http://localhost:8501"
-            name="labelFrame"
-            height="1000"
-            width="1500"
+  return (
+    <div>
+      <Container fluid>
+        <Row>
+          <Col>
+            <h4>Load Data</h4>
+          </Col>
+          <Col>
+            <Button
+              className="float-end"
+              variant="outline-danger"
+              onClick={reDrectPage}
             >
-        </iframe>
-
-
-
-        </div>
-
-    )
+              Log Out
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <iframe
+              title="labeler"
+              src="http://localhost:8501"
+              name="labelFrame"
+              height="1000"
+              // width="1500"
+              width="100%"
+            ></iframe>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }
 
 export default Loaddata;

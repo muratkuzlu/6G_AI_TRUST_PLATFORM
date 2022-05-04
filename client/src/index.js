@@ -11,6 +11,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Login from './components/Login';
+import HomeView from './components/HomeView';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,10 +21,11 @@ ReactDOM.render(
     <Navbar />
       <Routes>
         {/* <Route index element={<ClassLogin />} /> */}
-        <Route index element={<ClassLogin />} />
+        <Route index element={<Login />} />
         <Route path="app" element={<App />} />
-        <Route path="register" element={<Register />} />
-        <Route path="loaddata" element={<Loaddata />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/loaddata" element={<Loaddata />} />
+        {/* <Route path="/home" element={<HomeView />} /> */}
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

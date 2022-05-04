@@ -13,7 +13,7 @@ class UserBase(BaseModel):
 #this data type will be send back to user
 class UserDisplay(BaseModel):
   username: str
-  email: str
+  # email: str
   #this config class convert data from db to our format
   #our format is above format(username, email)
   #without config class, we would get error
