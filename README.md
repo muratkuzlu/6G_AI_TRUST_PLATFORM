@@ -14,4 +14,4 @@ npm start
 streamlit run Sandbox/ai_app.py
 
 # Optional to run on differen port:
-streamlit run Sandbox/ai_app.py --server.port 8503
+streamlit run Sandbox_6G/ai_app.py --server.port 8503
